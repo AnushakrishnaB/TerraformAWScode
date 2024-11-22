@@ -1,25 +1,6 @@
-Terraform Variables
-Terraform Dependencies : Implicit & Explicit
-Remote State File with S3 bucket:
-State file locking with Dynamo DB Table
-
-
-AWS_ACCESS_KEY_ID 
-AWS_SECRET_ACCESS_KEY 
-
---POWERSHELL--
-$env:AWS_ACCESS_KEY_ID="XXXX"
+1. Make sure the outputs are declared in the remote state before you are importing.
+2. If you use a diffrent new powershell window, access env variables dont exists. Need
+to configure again or perform aws configure.
+$env:AWS_ACCESS_KEY_ID="XXX"
 $env:AWS_SECRET_ACCESS_KEY="YYY"
-
-
---LINUX--
-export AWS_ACCESS_KEY_ID="XXXX"
-export AWS_SECRET_ACCESS_KEY="YYYY"
-
-Terraform loads variables in the following order, with later sources taking precedence over earlier ones:
-
-    Environment variables
-    The terraform.tfvars file, if present.
-    The terraform.tfvars.json file, if present.
-    Any *.auto.tfvars or *.auto.tfvars.json files, processed in lexical order of their filenames.
-    Any -var and -var-file options on the command line, in the order they are provided. (This includes variables set by a Terraform Cloud workspace.)
+3. No need of providing dynamodb table incase the remote state is using dynamodb locking.
