@@ -1,9 +1,3 @@
-Terraform Variables
-Terraform Dependencies : Implicit & Explicit
-Remote State File with S3 bucket:
-State file locking with Dynamo DB Table
-
-
 AWS_ACCESS_KEY_ID 
 AWS_SECRET_ACCESS_KEY 
 
